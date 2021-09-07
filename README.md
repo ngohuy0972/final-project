@@ -40,5 +40,6 @@
 5. Install all environment(images and container), run: sail up -d or docker compose up -d
 6. Create file .env
 7. Migrate database: php artisan migrate
-8. Create Key: php artisan key:generate
-9. Run: php artisan serve.
+8. Seeding database: php artisan db:seed
+9. Create Key: php artisan key:generate
+10. Run: php artisan serve.
