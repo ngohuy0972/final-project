@@ -3,9 +3,13 @@
 1. Guest :
 
   View Product.
+  
   Register.
+  
   Add product to cart.
+  
   Customer.
+  
 2. Login :
 
   Add product to cart.
