@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class OrderController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class RegisterController extends Controller
     public function index()
     {
         //
-        return view('auth.register');
+        return view('admin.order');
     }
 
     /**

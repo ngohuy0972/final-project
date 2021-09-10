@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,9 @@ Route::get('/', function () {
 });
 
 // Authentication
+Auth::routes();
 
-Route::resource('/login', 'LoginController');
-Route::resource('/register', 'RegisterController');
-Route::resource('/reset-password', 'ResetPasswordController');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Pages
 Route::resource('/home', 'HomeController');
@@ -30,6 +30,11 @@ Route::resource('/contact', 'ContactController');
 Route::resource('/about', 'AboutController');
 Route::resource('/cart', 'CartController');
 
-// Product
+// Admin
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
+Route::resource('admin/product', 'ProductController');
+Route::resource('admin/user', 'UserController');
+Route::resource('admin/stock', 'StockController');
+Route::resource('admin/order', 'OrderController');
 
 

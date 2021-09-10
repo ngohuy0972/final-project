@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ResetPasswordController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class ResetPasswordController extends Controller
     public function index()
     {
         //
-        return view('auth.reset_password');
+        return view('admin.user');
     }
 
     /**

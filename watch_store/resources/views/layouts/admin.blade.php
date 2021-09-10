@@ -27,7 +27,39 @@
 
     @include('elements.header')
     {{-- CONTENTS IS HERE --}}
-    @yield('content')
+
+    <main class="py-4">
+      <div class="container">
+          <div class="row mx-auto">
+              <div class="col-12 col-md-12 col-lg-2 col-md-2 col-sm-12 pb-2">
+                  <div class="card">
+                      <div class="card-header">
+                          NAVIGATION
+                      </div>
+                      <ul class="list-group">
+                          <a href="{{ route('dashboard') }}" class="list-group-item admin-navigation">
+                              Dashboard
+                          </a>
+                          <a href="{{ route('user.index') }}" class="list-group-item admin-navigation">
+                                  User
+                          </a>
+                          <a href="{{ route('product.index') }}" class="list-group-item admin-navigation">
+                                  Product
+                          </a>
+                          <a href="{{ route('stock.index') }}" class="list-group-item admin-navigation">
+                                  Stock
+                          </a>
+                          <a href="{{ route('order.index') }}" class="list-group-item admin-navigation">
+                                  Order
+                          </a>
+                      </ul>
+                  </div>
+              </div>
+              @yield('content')
+          </div>
+      </div>
+      
+  </main>
 
     @include('elements.footer')
  <!-- JS here -->

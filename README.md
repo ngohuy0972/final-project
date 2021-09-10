@@ -31,3 +31,8 @@
 7. Migrate database: php artisan migrate
 8. Create Key: php artisan key:generate
 9. Run: php artisan serve.
+
+
+If you have problem about 'The stream or file "/home/huybapp/php/final-project/watch_store/storage/logs/laravel.log" could not be opened in append mode: failed to open stream: Permission denied'. You can try this command: sudo chmod -R 777 ./storage/logs/laravel.log
+
+If you have problem about 'could not find driver (SQL: select * from information_schema.tables where table_schema = lsapp and table_name = migrations and table_type = 'BASE TABLE')'. Run command: sudo apt-get install -y php-pdo-mysql
