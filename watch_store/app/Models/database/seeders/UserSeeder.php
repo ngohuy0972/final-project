@@ -18,16 +18,26 @@ class UserSeeder extends Seeder
         //
         User::create([
             'name'=>'Huy Ngo',
-            'email'=>'huyngoit@gmail.com',
+            'email'=>'huyngoit99@gmail.com',
             'password'=>Hash::make('huyngo0972'),
-            'role'=>'1'
+            'role'=>'Admin',
+            'phonenumber'=>0,
+            'country'=>'',
+            'city'=>'',
+            'address'=>'',
+            'zipcode'=>0
         ]);
 
         User::create([
             'name'=>'Huy Bapp',
             'email'=>'ngohuy0164@gmail.com',
             'password'=>Hash::make('huyngo0972'),
-            'role'=>'2'
+            'role'=>'User',
+            'phonenumber'=>0,
+            'country'=>'',
+            'city'=>'',
+            'address'=>'',
+            'zipcode'=>0
         ]);
     }
 }

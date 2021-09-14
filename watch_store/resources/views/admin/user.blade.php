@@ -12,6 +12,7 @@
                 <thead>
                   <tr>
                     <th scope="col">ID</th>
+                    <th scope="col">Role</td>
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Phone Number</th>
@@ -23,22 +24,29 @@
                   </tr>
                 </thead>
                 <tbody>
-                {{-- @foreach ($users as $user) --}}
+                @foreach ($users as $user)
                   <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                    <th scope="row">{{$user->id}}</th>
+                    <td>{{$user->role}}</td>
+                    <td>{{$user->name}}</td>
+                    <td>{{$user->email}}</td>
+                    <td>{{$user->phonenumber}}</td>
+                    <td>{{$user->country}}</td>
+                    <td>{{$user->city}}</td>
+                    <td>{{$user->address}}</td>
+                    <td>{{$user->zipcode}}</td>
                     <td>
-                      <a href="#" class="btn-action btn-primary w-100 m-1" style="color:white;">EDIT</a>
-                      <a href="#" class="btn-action btn-danger w-100 m-1" style="color:white;">REMOVE</a>
+                      <button class="btn-action btn-primary w-100 m-1"><a href="{{ route('user.edit',$user->id)}}" style="color:white;">EDIT</a></button>
+                        <form action="{{ route('user.destroy', $user->id) }}" method="POST">
+                          @method('DELETE')
+                          @csrf
+                          <button class="btn-action btn-danger w-100 m-1" onclick="return confirm('Are you sure?')">
+                              REMOVE  
+                          </button>
+                      </form> 
                   </td>
                   </tr>
-                {{-- @endforeach --}}
+                @endforeach
                 </tbody>
               </table>
         </div>

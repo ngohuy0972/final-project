@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Product;
+use App\Models\Stock;
 
 class StockController extends Controller
 {
@@ -14,7 +16,37 @@ class StockController extends Controller
     public function index()
     {
         //
-        return view('admin.stock');
+        $products = Product::all();
+
+        return view('admin.stock')->with(compact('products'));
+    }
+
+    public function stockShow(Request $request){
+        $data = $request->all();
+
+        $stocks = Stock::where('product_id', '=', $data['id'])->get();
+
+        $output ='';
+        foreach($stocks as $stock)
+        {
+            $output .='
+            <tr >
+            <th scope="row">
+                '.$stock->color.'
+            </th>
+            <td>
+                '.$stock->quantity.'
+            </td>
+            <td>
+                  <a href="/admin-stock/edit/'.$stock->id.'" class="btn-action btn-primary w-100 m-1" style="color:white; width:100px;">EDIT</a>
+                  <a href="/admin-stock/remove/'.$stock->id.'" class="btn-action btn-danger w-100 m-1" style="color:white; width:100px;">REMOVE</a>
+            </td>
+            </tr>
+      
+            ';
+        }
+
+        return $output;
     }
 
     /**

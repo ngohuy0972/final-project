@@ -74,6 +74,10 @@ class ProductController extends Controller
     public function edit($id)
     {
         //
+        $products = Product::where('id', '=', $id)->get();
+        // echo($id.'+'.$products);
+
+        return view('admin.editproduct')->with(compact('products'));
     }
 
     /**
@@ -86,6 +90,41 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         //
+        $products = Product::find($id);
+        $image = request('image');
+
+        if ($products->image == null) {
+            $imagePath = request('image')->store('/uploads/images', 'public');
+            
+            $products->name = $request->name;
+            $products->price = $request->price;
+            $products->brand = $request->brand;
+            $products->category = $request->category;
+            $products->image = $imagePath;
+        } else {
+            if ($image) {
+                $detinationPath = '/uploads/images' . $products->image;
+                if (file_exists($detinationPath)) {
+                    unlink($detinationPath);
+                }
+                $imagePath = request('image')->store('/uploads/images', 'public');
+                $products->name = $request->name;
+                $products->price = $request->price;
+                $products->brand = $request->brand;
+                $products->category = $request->category;
+                $products->image = $imagePath;
+            } else{
+                $products->name = $request->name;
+                $products->price = $request->price;
+                $products->brand = $request->brand;
+                $products->category = $request->category;
+                // $products->image = $imagePath;
+            }
+            $products->save();
+        }
+        $products->save();
+
+        return redirect()->route('product.index')->with('update', 'Update Data Successfully');
     }
 
     /**
@@ -97,5 +136,8 @@ class ProductController extends Controller
     public function destroy($id)
     {
         //
+        $products = Product::where('id', '=', $id)->delete();
+        
+        return redirect()->route('product.index')->with('Delete Successfully');
     }
 }

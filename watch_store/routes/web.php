@@ -29,12 +29,14 @@ Route::resource('/shop', 'ShopController');
 Route::resource('/contact', 'ContactController');
 Route::resource('/about', 'AboutController');
 Route::resource('/cart', 'CartController');
+Route::resource('/profiles', 'ProfilesController');
 
 // Admin
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 Route::resource('admin/product', 'ProductController');
 Route::resource('admin/user', 'UserController');
 Route::resource('admin/stock', 'StockController');
+Route::post('admin/stock-show', 'StockController@stockShow')->name('stock-show');
 Route::resource('admin/order', 'OrderController');
 
 

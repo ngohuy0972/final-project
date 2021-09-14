@@ -42,9 +42,15 @@
                     <td>{{ $item->price }}</td>
                     <td>{{ $item->category }}</td>
                     <td>
-                        <a href="#" class="btn-action btn-primary w-100 m-1" style="color:white;">EDIT</a>
-                        <a href="#" class="btn-action btn-danger w-100 m-1" style="color:white;">REMOVE</a>
-                    </td>
+                        <button class="btn-action btn-primary w-100 m-1"><a href="{{ route('product.edit',$item->id)}}" style="color:white;">EDIT</a></button>
+                        <form action="{{ route('product.destroy',$item->id) }}" method="POST">
+                          @method('DELETE')
+                          @csrf
+                          <button class="btn-action btn-danger w-100 m-1" onclick="return confirm('Are you sure?')">
+                              REMOVE  
+                          </button>
+                      </form> 
+                      </td>
                   </tr>
                 @endforeach
                 </tbody>

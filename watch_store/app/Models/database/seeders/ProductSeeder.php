@@ -26,7 +26,7 @@ class ProductSeeder extends Seeder
 
         Product::create([
             'name'=>'Watch 02',
-            'brand'=>'Richard Mill',
+            'brand'=>'Richard Mille',
             'price'=>'80000',
             'image'=>'/uploads/images/popular2.png',
             'category'=>'Watch'

@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
 
-class UserController extends Controller
+class ProfilesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,11 +18,13 @@ class UserController extends Controller
     public function index()
     {
         //
-        $users = User::all();
+        if(Auth::check()){
+            $id_login = Auth::user()->id;
+            $users_profile = User::where('id', '=', $id_login)->get();
+            // echo($users);
+        }
 
-        // echo($users);
-
-        return view('admin.user')->with(compact('users'));
+        return view('profiles.profiles')->with(compact('users_profile'));
     }
 
     /**
@@ -42,6 +46,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        
     }
 
     /**
@@ -64,9 +69,13 @@ class UserController extends Controller
     public function edit($id)
     {
         //
-        $users = User::where('id', '=', $id)->get();
+        // if(Auth::check()){
+        //     $id_login = Auth::user()->id;
+        //     $users = User::where('id', '=', $id_login)->get();
+        //     // echo($users);
+        // }
 
-        return view('admin.edituser')->with(compact('users'));
+        // return view('profiles.editprofiles')->with(compact('users'));
     }
 
     /**
@@ -78,11 +87,9 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $users = User::find($id);
 
         $users->name = $request->name;
-        $users->role = $request->role;
         $users->phonenumber = $request->phonenumber;
         $users->country = $request->country;
         $users->city = $request->city;
@@ -91,7 +98,7 @@ class UserController extends Controller
 
         $users->save();
 
-        return redirect()->route('user.index')->with('Update user successfully');
+        return redirect()->route('profiles.index')->with('Update Successfully');
     }
 
     /**
