@@ -19,7 +19,8 @@
             <h5>STOCK LIST</h5>
         </div>
         <div class="card-body">
-            {{-- <a href="{{ route('admin.addstockform') }}" class="btn btn-success mb-2" style="color:white; width:150px;">ADD SIZE</a> --}}
+            <a href="{{ route('stock.create') }}" class="btn-create-form btn-success mb-4" style="color:white; width:150px;">ADD COLOR</a>
+            <hr>
             <select name="product-list" id="product-list" onchange="product_stock()" class="w-100 p-2 mb-2">
                 <option selected="true" value="" disabled hidden>Choose product</option>
                 @foreach ($products as $item)

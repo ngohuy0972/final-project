@@ -9,7 +9,8 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/img/favicon.ico')}}">
-
+    <!-- Font-Awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}">
@@ -17,7 +18,7 @@
     <link rel="stylesheet" href="{{asset('frontend/css/slicknav.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/animate.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/magnific-popup.css')}}">
-    <link rel="stylesheet" href="{{asset('frontend/css/fontawesome-all.min.css')}}">
+    {{-- <link rel="stylesheet" href="{{asset('frontend/css/fontawesome-all.min.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('frontend/css/themify-icons.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/slick.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/nice-select.css')}}">

@@ -11,42 +11,43 @@
         </div>
         </div>
         @endif
+        
         <div class="row">
             <div class="col-4 totaluser">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-user"> USER</i>
+                        <i class="fa fa-user">&nbsp TOTAL USER</i>
                     </div>
                     <div class="card-body">
-                        {{-- <h5>{{ $totaluser }}</h5> --}}
+                        <h5>{{ $totaluser }} users</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-4 totalorder">
+            <div class="col-4 totalproduct">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-dropbox"> ORDER</i> 
+                        <i class="fas fa-box">&nbsp TOTAL PRODUCT</i>
                     </div>
                     <div class="card-body">
-                        {{-- <h5>{{ $totalorder }} </h5> --}}
+                        <h5>{{ $totalproduct }} products</h5>
                     </div>
                 </div>
             </div>
-            <div class="col-4 totalgross">
+            <div class="col-4 totalmoney">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-money"> GROSS</i>
+                        <i class="fas fa-money-bill">&nbsp TOTAL MONEY</i>
                     </div>
                     <div class="card-body">
                         
-                        {{-- <h5>RM {{ $totalgross }}</h5> --}}
+                        <h5>{{ number_format($totalprice)}} USD</h5>
                     </div>
                 </div>
             </div>
             <div class="col-12 col-md-12 col-sm-12 col-lg-8 latestorder mt-4">
                 <div class="card">
                     <div class="card-header">
-                        LATEST ORDER
+                        <i class="fas fa-cart-plus">&nbsp LATEST ORDER</i>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
@@ -68,7 +69,22 @@
             <div class="col-12 col-md-12 col-sm-12 col-lg-4 mt-4">
                 <div class="card">
                     <div class="card-header">
-                        Reminder
+                        <i class="fas fa-file-alt">&nbsp TOTAL ORDER</i>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            {{-- @foreach ($latest as $order)
+                            <a href="{{ route('admin.showorder',['id'=>$order->id]) }}" class="list-group-item latest-order">
+                                <div class="row">
+                                    <div class="col-12 d-flex">
+                                        <div class="id" style="width:150px">Order ID: {{ $order->id }}</div>
+                                        <div class="name">Customer Name: {{ $order->name }}</div>
+                                        <div class="status text-success ml-auto">PAID</div> 
+                                    </div>
+                                </div>
+                            </a>
+                            @endforeach --}}
+                        </ul>
                     </div>
                     {{-- <div class="card-body">
                         <form method="POST" action="{{ route('admin.reminder') }}" enctype="multipart/form-data">

@@ -24,6 +24,7 @@ class StockController extends Controller
     public function stockShow(Request $request){
         $data = $request->all();
 
+        // dd($data);
         $stocks = Stock::where('product_id', '=', $data['id'])->get();
 
         $output ='';
@@ -38,8 +39,14 @@ class StockController extends Controller
                 '.$stock->quantity.'
             </td>
             <td>
-                  <a href="/admin-stock/edit/'.$stock->id.'" class="btn-action btn-primary w-100 m-1" style="color:white; width:100px;">EDIT</a>
-                  <a href="/admin-stock/remove/'.$stock->id.'" class="btn-action btn-danger w-100 m-1" style="color:white; width:100px;">REMOVE</a>
+            <button class="btn-action btn-primary w-100 m-1"><a href="'. route('stock.edit',$stock->id).'" style="color:white;">EDIT</a></button>
+            <form action="'.route('stock.destroy', $stock->id).'" method="POST">
+                <input type="hidden" name="_token" value="'. csrf_token() .'">
+                <input type="hidden" name="_method" value="DELETE">
+              <button class="btn-action btn-danger w-100 m-1">
+                  REMOVE  
+              </button>
+          </form> 
             </td>
             </tr>
       
@@ -57,6 +64,9 @@ class StockController extends Controller
     public function create()
     {
         //
+        $products = Product::all();
+
+        return view('admin.addstock')->with(compact('products'));
     }
 
     /**
@@ -68,6 +78,18 @@ class StockController extends Controller
     public function store(Request $request)
     {
         //
+        $data = $request->all();
+        
+        // dd($data);
+
+        $stock_color = new Stock();
+        $stock_color->product_id = $data['product-id'];
+        $stock_color->color = $request->color;
+        $stock_color->quantity = $request->quantity;
+        
+        $stock_color->save();
+
+        return redirect()->route('stock.index');
     }
 
     /**
@@ -90,6 +112,11 @@ class StockController extends Controller
     public function edit($id)
     {
         //
+        // dd($id);
+        $stock_color = Stock::where('id', '=', $id)->get();
+
+        return view('admin.editstock')->with(compact('stock_color'));
+
     }
 
     /**
@@ -102,6 +129,14 @@ class StockController extends Controller
     public function update(Request $request, $id)
     {
         //
+
+        $stock_color = Stock::find($id);
+        $stock_color->color = $request->color;
+        $stock_color->quantity = $request->quantity;
+
+        $stock_color->save();
+
+        return redirect()->route('stock.index')->with('Update Successfully');
     }
 
     /**
@@ -113,5 +148,8 @@ class StockController extends Controller
     public function destroy($id)
     {
         //
+        Stock::where('id','=',$id)->delete();
+
+        return redirect()->route('stock.index')->with('Delete Successfully');
     }
 }

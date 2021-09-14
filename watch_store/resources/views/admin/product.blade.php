@@ -39,14 +39,14 @@
                     <td><img style="height:100px;" src="{{ asset('/storage/'.$item->image )}}" alt=""></td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->brand }}</td>
-                    <td>{{ $item->price }}</td>
+                    <td>{{ number_format($item->price) }} USD</td>
                     <td>{{ $item->category }}</td>
                     <td>
                         <button class="btn-action btn-primary w-100 m-1"><a href="{{ route('product.edit',$item->id)}}" style="color:white;">EDIT</a></button>
                         <form action="{{ route('product.destroy',$item->id) }}" method="POST">
                           @method('DELETE')
                           @csrf
-                          <button class="btn-action btn-danger w-100 m-1" onclick="return confirm('Are you sure?')">
+                          <button class="btn-action btn-danger w-100 m-1">
                               REMOVE  
                           </button>
                       </form> 
