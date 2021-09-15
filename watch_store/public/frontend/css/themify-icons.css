@@ -12,7 +12,7 @@
 }
 
 [class^="ti-"], [class*=" ti-"] {
-	font-family: 'themify';
+	font-family: 'themify' !important;
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -1081,3 +1081,7 @@
 .ti-rss-alt:before {
 	content: "\e75f";
 }
+
+/* .fas .fa-level-up-alt:before {
+	content: "\f3bf" !important; 
+} */

@@ -16,7 +16,7 @@
             <div class="col-4 totaluser">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fa fa-user">&nbsp TOTAL USER</i>
+                        <i class="fa fa-user" style="color: #ff2020">&nbsp TOTAL USER</i>
                     </div>
                     <div class="card-body">
                         <h5>{{ $totaluser }} users</h5>
@@ -26,7 +26,7 @@
             <div class="col-4 totalproduct">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fas fa-box">&nbsp TOTAL PRODUCT</i>
+                        <i class="fas fa-box" style="color: #ff2020">&nbsp TOTAL PRODUCT</i>
                     </div>
                     <div class="card-body">
                         <h5>{{ $totalproduct }} products</h5>
@@ -36,7 +36,7 @@
             <div class="col-4 totalmoney">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fas fa-money-bill">&nbsp TOTAL MONEY</i>
+                        <i class="fas fa-money-bill"  style="color: #ff2020">&nbsp TOTAL MONEY</i>
                     </div>
                     <div class="card-body">
                         
@@ -47,7 +47,7 @@
             <div class="col-12 col-md-12 col-sm-12 col-lg-8 latestorder mt-4">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fas fa-cart-plus">&nbsp LATEST ORDER</i>
+                        <i class="fas fa-cart-plus"  style="color: #ff2020">&nbsp LATEST ORDER</i>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">
@@ -69,7 +69,7 @@
             <div class="col-12 col-md-12 col-sm-12 col-lg-4 mt-4">
                 <div class="card">
                     <div class="card-header">
-                        <i class="fas fa-file-alt">&nbsp TOTAL ORDER</i>
+                        <i class="fas fa-file-alt"  style="color: #ff2020">&nbsp TOTAL ORDER</i>
                     </div>
                     <div class="card-body">
                         <ul class="list-group">

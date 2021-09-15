@@ -2,6 +2,28 @@
 
 /* CUSTOM CSS HERE */
 
+* {
+    font-family: "Josefin Sans",sans-serif !important;
+}
+
+.all-button {
+    display: inline-block;
+    padding: 18px 36px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #ff2020;
+    font-size: 15px;
+    font-weight: 700;
+    color: #ff2020;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.all-button:hover {
+    background:#ff2020;
+    color: #fff;
+}
+
 .list-group a {
     color :#000;
 }
@@ -57,6 +79,30 @@ label {
     font-weight: 600;
 }
 
+/* Search */
+
+#search-item-list {
+    margin-top: 300px;
+}
+
+#search-item-list ul {
+	display: block;
+    position: relative;
+    overflow-y: auto;
+    width: 500px;
+    height: 250px;
+}
+
+#search-item-list ul li a {
+	color: #838383;
+    font-size: 20px;
+    font-family: "Josefin Sans",sans-serif;
+    background-color: #fff;
+    font-weight: 450;
+    line-height: 45px;
+    margin-left: 5%;
+}
+
 
 .white-bg{background:#ffffff}
 .gray-bg{background:#f5f5f5}
@@ -104,7 +150,9 @@ label {
     .6}[data-opacity="7"]::before{opacity:0
     .7}[data-opacity="8"]::before{opacity:0
     .8}[data-opacity="9"]::before{opacity:0
-    .9}body{font-family:"Roboto",sans-serif;
+    .9}
+    body{
+        font-family:"Josefin Sans",sans-serif;
         font-weight:normal;
         font-style:normal}h1,h2,h3,h4,h5,h6{font-family:"Josefin Sans",sans-serif;
         color:#0b1c39;
@@ -307,7 +355,8 @@ label {
     transform:translateY(-3px)}
 .shop1-btn{box-shadow:0px 20px 50px 0px rgba(37,119,253,0
     .2)}
-.border-btn{background:none;
+.border-btn{
+    background:none;
     -moz-user-select:none;
     border:2px solid #ff2020;
     padding:18px 38px;
@@ -387,7 +436,9 @@ label {
     order:2px solid transparent;
     color:red}
 .breadcrumb>.active{color:#888}
-#scrollUp{background:#ff2020;
+
+#scrollUp{
+    background:#ff2020;
     height:50px;
     width:50px;
     right:31px;
@@ -1306,14 +1357,22 @@ label {
     background:#000;
     z-index:99999}
 .search-model-box 
-.search-model-form{padding:0 15px}
+.search-model-form{
+    padding:0 15px;
+    position: absolute;
+}
 .search-model-box 
-.search-model-form input{width:500px;
-    font-size:40px;
-    border:none;
-    border-bottom:2px solid #333;
-    background:none;
-    color:#999}@media only screen and (min-width: 576px) and (max-width: 767px){
+.search-model-form input{
+    width: 500px;
+    font-size: 40px;
+    border: none;
+    border-bottom: 2px solid #333;
+    background: none;
+    color: #999;
+    font-size: 22px;
+    font-family: "Josefin Sans",sans-serif;
+}
+    @media only screen and (min-width: 576px) and (max-width: 767px){
     .search-model-box 
     .search-model-form input{width:251px;
         font-size:26px}}@media (max-width: 575px){
@@ -4343,10 +4402,10 @@ label {
         padding:18px 36px;
         border-radius:5px;
         background-color:transparent;
-        border:1px solid #2577fd;
+        border:1px solid #ff2020;
         font-size:15px;
         font-weight:700;
-        color:#2577fd;
+        color:#ff2020;
         text-transform:uppercase;
         font-weight:400;
         -webkit-transition:
@@ -4357,7 +4416,7 @@ label {
         .5s;
         transition:
         .5s}
-    .btn_3:hover{background-color:#2577fd;
+    .btn_3:hover{background-color:#ff2020;
         color:#fff}
     .btn_2{display:inline-block;
         width:180px;
@@ -4639,21 +4698,22 @@ label {
         z-index:-1}
     .single_product_breadcrumb{height:460px !important}@media (max-width: 991px){
         .single_product_breadcrumb{height:250px !important}}
-    .product_image_area{margin-top:150px}@media (max-width: 991px){
+    .product_image_area{
+        margin-top:150px;
+    }
+    @media (max-width: 991px){
         .product_image_area{margin-top:-150px !important}}
-    .product_image_area 
-    .owl-nav button
-    .owl-prev,
-    .product_image_area 
-    .owl-nav button
-    .owl-next{width:40px;
+    .product_image_area .owl-nav button.owl-prev,
+    .product_image_area .owl-nav button.owl-next{
+        width:40px;
         height:40px;
         font-size:14px;
         line-height:40px;
         border-radius:50%;
-        border:1px solid #E4D3DF;
-        color:#fff;
-        background-color:#E4D3DF;
+        border:1px solid #fff;
+        color:#ff2020;
+        background-color:#fff;
+        border-color: #ff2020;
         position:absolute;
         left:30px;
         top:54%;
@@ -4661,40 +4721,27 @@ label {
         .5s;
         transition:
         .5s}
-    .product_image_area 
-    .owl-nav button
-    .owl-prev:hover,
-    .product_image_area 
-    .owl-nav button
-    .owl-next:hover{background-color:#828bb2;
+    .product_image_area .owl-nav button.owl-prev:hover,
+    .product_image_area .owl-nav button.owl-next:hover{
+        background-color:#ff2020;
         color:#fff}
-    .product_image_area 
-    .owl-nav button
-    .owl-next{text-indent:2px;
+    .product_image_area .owl-nav button.owl-next{
+        text-indent:2px;
         left:auto;
-        right:30px}
-    .product_image_area 
-    .single_product_text{margin:100px 0 200px}@media (max-width: 991px){
-        .product_image_area 
-        .single_product_text{margin:40px 0 70px}}@media only screen and (min-width: 992px) and (max-width: 1200px){
-        .product_image_area 
-        .single_product_text{margin:50px 0 80px}}
-    .product_image_area 
-    .single_product_text h3{font-size:40px}@media (max-width: 991px){
-        .product_image_area 
-        .single_product_text h3{font-size:25px}
-    .product_image_area 
-    .single_product_text h3 br{display:none}}
-    .product_image_area 
-    .single_product_text p{margin-top:50px;
+        right:30px
+    }
+    .product_image_area .single_product_text{margin:100px 0 200px}@media (max-width: 991px){
+        .product_image_area .single_product_text{margin:40px 0 70px}}@media only screen and (min-width: 992px) and (max-width: 1200px){
+        .product_image_area .single_product_text{margin:50px 0 80px}}
+    .product_image_area .single_product_text h3{font-size:40px}@media (max-width: 991px){
+        .product_image_area .single_product_text h3{font-size:25px}
+    .product_image_area .single_product_text h3 br{display:none}}
+    .product_image_area .single_product_text p{margin-top:50px;
         color:#707070}@media (max-width: 991px){
-        .product_image_area 
-        .single_product_text p{margin-top:20px}}@media only screen and (min-width: 992px) and (max-width: 1200px){
-        .product_image_area 
-        .single_product_text p{margin-top:20px}}
+        .product_image_area .single_product_text p{margin-top:20px}}@media only screen and (min-width: 992px) and (max-width: 1200px){
+        .product_image_area .single_product_text p{margin-top:20px}}
     .card_area{margin-top:60px}
-    .card_area 
-    .product_count_area{display:flex;
+    .card_area .product_count_area{display:flex;
         align-items:center;
         justify-content:center}
     .card_area 
@@ -4716,12 +4763,20 @@ label {
         .product_count 
         .product_count_item{width:45px}}
     .card_area 
-    .product_count input{background-color:#828bb2;
+    .product_count input{background-color:#000;
         color:#fff;
-        border:1px solid #828bb2;
+        border:1px solid #000;
         color:#fff}
+    .quantity {
+        margin-bottom: 20px;
+        font-size: 20px;
+    }
+    .total-price {
+        font-size: 20px;
+        margin-top: 20px;
+    }
     .card_area 
-    .add_to_cart{margin-top:60px}input:focus{outline-offset:0}
+    .add_to_cart{margin-top:30px}input:focus{outline-offset:0}
     .trending_items{background-color:#F4EDF2;
         padding:200px 0 130px}@media (max-width: 991px){
         .trending_items{padding:70px 0 40px}}@media only screen and (min-width: 992px) and (max-width: 1200px){
@@ -5549,7 +5604,7 @@ label {
     .input-number-decrement{position:absolute;
         right:0;
         bottom:-9px;
-        padding:10px;
+        padding:12px;
         border-left:1px solid #ddd;
         display:inline-block}@media (max-width: 576px){
         .cart_area 

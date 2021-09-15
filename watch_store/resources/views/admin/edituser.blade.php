@@ -110,7 +110,7 @@
           </div>
           <hr>
         
-        <button type="submit" class="btn btn-success w-100">UPDATE USER</button>
+        <button type="submit" class="all-button w-100">UPDATE USER</button>
     
     </form>
     @endforeach

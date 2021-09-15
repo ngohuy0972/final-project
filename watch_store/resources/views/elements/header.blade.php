@@ -6,7 +6,7 @@
                 <div class="menu-wrapper">
                     <!-- Logo -->
                     <div class="logo">
-                        <a href="index.html"><img src="{{asset('frontend/img/logo/logo.png')}}" alt=""></a>
+                        <a href="{{ route('home.index')}}"><img src="{{asset('frontend/img/logo/logo.png')}}" alt=""></a>
                     </div>
                     <!-- Main-menu -->
                     <div class="main-menu d-none d-lg-block">
@@ -48,7 +48,12 @@
                                     <span class="flaticon-search"></span>
                                 </div>
                             </li>
-                            <li><a href="{{route('cart.index')}}"><span class="flaticon-shopping-cart"></span></a> </li>
+                            <li>
+                                <a class="total-cart" href="{{route('cart.index')}}">
+                                    {{-- <span>2</span> --}}
+                                    <span class="flaticon-shopping-cart"></span>
+                                </a> 
+                            </li>
                             
                                 {{-- <a href="{{route('login')}}"><span class="flaticon-user"></span></a> --}}
                                 <!-- Authentication Links -->
@@ -97,10 +102,45 @@
     <div class="search-model-box">
         <div class="h-100 d-flex align-items-center justify-content-center">
             <div class="search-close-btn">+</div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Searching key.....">
-            </form>
+            {{-- <div class="search-section"> --}}
+                <form class="search-model-form" action="{{route('search-results')}}" method="GET" autocomplete="off">
+                    <input type="text" id="search-input" name="keyword" placeholder="Searching key.....">
+                </form>
+                <div id="search-item-list">
+                    
+                </div>
+            {{-- </div> --}}
         </div>
     </div>
     <!-- Search model end -->
 </header>
+<script src="{{asset('frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
+<script>
+    $('#search-input').keyup(function(){
+        var keyword = document.getElementById('search-input').value;
+        // alert(keyword);
+        if(keyword != null) {
+            $.ajax({
+                url: "{{ route('search') }}",
+                method: "GET",
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                data: {
+                    keyword:keyword
+                },
+                success: function(data){
+                    $('#search-item-list').fadeIn(data);
+                    $('#search-item-list').html(data);
+                }
+            })
+        } else {
+            $('#search-item-list').fadeOut(data);
+        }
+
+        $(document).on('click', '.item-search-results', function(){
+            $('#search-input').val($(this).text());
+            $('#search-item-list').fadeOut();
+        });
+    })
+</script>

@@ -43,7 +43,7 @@
 
         </div>
         
-        <button type="submit" class="btn btn-primary w-100">EDIT STOCK</button>
+        <button type="submit" class="all-button w-100">EDIT STOCK</button>
     
     </form>
     @endforeach

@@ -10,7 +10,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/img/favicon.ico')}}">
     <!-- Font-Awesome -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="{{ asset('frontend/css/all.min.css')}}">
+    
+    {{-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" /> --}}
     <!-- CSS here -->
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/owl.carousel.min.css')}}">
@@ -35,23 +37,24 @@
           <div class="row mx-auto">
               <div class="col-12 col-md-12 col-lg-2 col-md-2 col-sm-12 pb-2">
                   <div class="card">
-                      <div class="card-header">
+                      <div class="card-header" style="font-family: 'Josefin Sans',sans-serif; color:
+                      #ff2020; font-weight:650;">
                           NAVIGATION
                       </div>
                       <ul class="list-group">
-                          <a href="{{ route('dashboard') }}" class="list-group-item admin-navigation">
+                          <a href="{{ route('dashboard') }}" class="list-group-item admin-navigation" style="font-family: 'Josefin Sans',sans-serif;">
                               Dashboard
                           </a>
-                          <a href="{{ route('user.index') }}" class="list-group-item admin-navigation">
+                          <a href="{{ route('user.index') }}" class="list-group-item admin-navigation" style="font-family: 'Josefin Sans',sans-serif;">
                                   User
                           </a>
-                          <a href="{{ route('product.index') }}" class="list-group-item admin-navigation">
+                          <a href="{{ route('product.index') }}" class="list-group-item admin-navigation" style="font-family: 'Josefin Sans',sans-serif;">
                                   Product
                           </a>
-                          <a href="{{ route('stock.index') }}" class="list-group-item admin-navigation">
+                          <a href="{{ route('stock.index') }}" class="list-group-item admin-navigation" style="font-family: 'Josefin Sans',sans-serif;">
                                   Stock
                           </a>
-                          <a href="{{ route('order.index') }}" class="list-group-item admin-navigation">
+                          <a href="{{ route('order.index') }}" class="list-group-item admin-navigation" style="font-family: 'Josefin Sans',sans-serif;">
                                   Order
                           </a>
                       </ul>

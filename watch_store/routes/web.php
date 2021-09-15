@@ -39,4 +39,9 @@ Route::resource('admin/stock', 'StockController');
 Route::post('admin/stock-show', 'StockController@stockShow')->name('stock-show');
 Route::resource('admin/order', 'OrderController');
 
+// Search Engine
+
+Route::get('/search', 'SearchEngineController@searchEngine')->name('search');
+Route::get('/search-results', 'SearchEngineController@index')->name('search-results');
+
 

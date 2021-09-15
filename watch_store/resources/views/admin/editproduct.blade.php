@@ -81,7 +81,7 @@
 
         </div>
         
-        <button type="submit" class="btn btn-success w-100">UPDATE PRODUCT</button>
+        <button type="submit" class="all-button w-100">UPDATE PRODUCT</button>
     
     </form>
     @endforeach

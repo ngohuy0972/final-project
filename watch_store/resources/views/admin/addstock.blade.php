@@ -53,7 +53,7 @@
 
         </div>
         
-        <button type="submit" class="btn btn-success w-100">ADD STOCK</button>
+        <button type="submit" class="all-button w-100">ADD STOCK</button>
     
     </form>
 

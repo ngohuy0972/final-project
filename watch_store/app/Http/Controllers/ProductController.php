@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use App\Models\Stock;
 
 class ProductController extends Controller
 {
@@ -63,6 +64,10 @@ class ProductController extends Controller
     public function show($id)
     {
         //
+        // dd($id);
+        $productDetails = Product::where('id', '=', $id)->get();
+
+        return view('product.productdetail')->with(compact('productDetails'));
     }
 
     /**
@@ -137,6 +142,7 @@ class ProductController extends Controller
     {
         //
         $products = Product::where('id', '=', $id)->delete();
+        $stock = Stock::where('product_id', '=', $id)->delete();
         
         return redirect()->route('product.index')->with('Delete Successfully');
     }
