@@ -4,7 +4,7 @@
 
 <div class="col-12 col-md-12 col-sm-12 col-lg-10">
 
-    <h5>ADD STOCK</h5>
+    <h5>ADD COLOR</h5>
     <hr>
 
     <form method="POST" action="{{ route('stock.store')}}" enctype="multipart/form-data">
@@ -14,7 +14,7 @@
             <div class="col-12">
                 <label for="product" class="">{{ __('Product') }}</label>
                 <div class="form-group">
-                    <select name="product-id" id="addproductstock" onchange="product_stock()" class="form-control">
+                    <select name="productid" id="addproductstock" onchange="product_stock()" class="form-control">
                         <option selected="true" value="" disabled hidden>Choose product</option>
                         @foreach ($products as $item)
                             <option value="{{ $item->id }}">{{ $item->id.' - '.$item->name }}</option>

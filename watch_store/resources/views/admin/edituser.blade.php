@@ -100,8 +100,8 @@
               <div class="form-group">
                   <div>
                       <select name="role" id="addproductbrand" class="form-control">
-                          <option value="User" {{$user->role == "User" ? 'selected' : ''}}>User</option>
-                          <option value="Admin" {{$user->role == "Admin" ? 'selected' : ''}}>Admin</option>
+                          <option value="User" {{$user->role_id == "User" ? 'selected' : ''}}>User</option>
+                          <option value="Admin" {{$user->role_id == "Admin" ? 'selected' : ''}}>Admin</option>
                       </select>
                   </div>
               </div>

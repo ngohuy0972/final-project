@@ -78,12 +78,9 @@ class StockController extends Controller
     public function store(Request $request)
     {
         //
-        $data = $request->all();
-        
-        // dd($data);
 
         $stock_color = new Stock();
-        $stock_color->product_id = $data['product-id'];
+        $stock_color->product_id = $request->productid;
         $stock_color->color = $request->color;
         $stock_color->quantity = $request->quantity;
         

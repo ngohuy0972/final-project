@@ -9,7 +9,7 @@
               <div class="row">
                   <div class="col-xl-12">
                       <div class="hero-cap text-center">
-                          <h2>Contacts</h2>
+                          <h2>Contacts Us</h2>
                       </div>
                   </div>
               </div>
@@ -54,7 +54,7 @@
                           </div>
                       </div>
                       <div class="form-group mt-3">
-                          <button type="submit" class="button button-contactForm boxed-btn">Send</button>
+                          <button type="submit" class="all-button">Send</button>
                       </div>
                   </form>
               </div>

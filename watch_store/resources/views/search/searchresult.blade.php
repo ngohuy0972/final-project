@@ -67,7 +67,7 @@
                               </div>
                           </div>
                           <div class="popular-caption">
-                              <h3><a href="{{ route('product.show',$item->id)}}">{{ $item->name}}</a></h3>
+                              <h3><a href="{{ route('shop.show',$item->id)}}">{{ $item->name}}</a></h3>
                               <span>$ {{ number_format($item->price )}}</span>
                           </div>
                       </div>

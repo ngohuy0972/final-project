@@ -9,7 +9,7 @@
 							<div class="row">
 									<div class="col-xl-12">
 											<div class="hero-cap text-center">
-													<h2>Watch Shop</h2>
+													<h2>New Arrivals</h2>
 											</div>
 									</div>
 							</div>
@@ -25,7 +25,7 @@
 									<!--Nav Button  -->
 									<nav>                                                      
 											<div class="nav nav-tabs" id="nav-tab" role="tablist">
-												<a href="{{ route('sort-new')}}" class="nav-item nav-link" id="newest" >New Arrivals</a>
+                        <a href="{{ route('sort-new')}}" class="nav-item nav-link active" id="newest" >New Arrivals</a>
                         <a href="{{ route('sort-price')}}" class="nav-item nav-link" id="pricesort" >Low Price</a>
                         <a href="{{ route('sort-name')}}" class="nav-item nav-link" id="namesort" > Name A-Z </a>
 											</div>
@@ -54,7 +54,7 @@
 																</div>
 														</div>
 														<div class="popular-caption">
-																<h3><a href="{{ route('product.show',$item->id)}}">{{ $item->name }}</a></h3>
+																<h3><a href="{{ route('shop.show',$item->id)}}">{{ $item->name }}</a></h3>
 																<span>$ {{ number_format($item->price) }}</span>
 														</div>
 												</div>
@@ -101,44 +101,5 @@
       }
     })
   }
-
-	// function priceSort(){
-  //   // var created_at = document.getElementById('created_at').value;
-  //   // alert(created_at);
-
-  //   $.ajax({
-  //     url:" {{ route('price-sort')}}",
-  //     method: 'POST',
-  //     headers:{
-  //           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  //         },
-  //     data: {
-  //       // time:created_at,
-  //     },
-  //     success:function(data){
-  //       $('#list-product').html(data);
-  //     }
-  //   })
-  // }
-
-	// function nameSort(){
-  //   // var created_at = document.getElementById('created_at').value;
-  //   // alert(created_at);
-
-  //   $.ajax({
-  //     url:" {{ route('name-sort')}}",
-  //     method: 'POST',
-  //     headers:{
-  //           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  //         },
-  //     data: {
-  //       // time:created_at,
-  //     },
-  //     success:function(data){
-  //       $('#list-product').html(data);
-  //     }
-  //   })
-  // }
-
 </script>
 @endsection

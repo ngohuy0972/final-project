@@ -74,6 +74,7 @@
  <script src="{{asset('frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
  <script src="{{asset('frontend/js/popper.min.js')}}"></script>
  <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
+
  <!-- Jquery Mobile Menu -->
  <script src="{{asset('frontend/js/jquery.slicknav.min.js')}}"></script>
 

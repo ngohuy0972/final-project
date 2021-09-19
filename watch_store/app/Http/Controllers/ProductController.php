@@ -64,10 +64,7 @@ class ProductController extends Controller
     public function show($id)
     {
         //
-        // dd($id);
-        $productDetails = Product::where('id', '=', $id)->get();
-
-        return view('product.productdetail')->with(compact('productDetails'));
+        
     }
 
     /**

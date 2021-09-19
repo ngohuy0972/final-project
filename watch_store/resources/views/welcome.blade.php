@@ -44,7 +44,7 @@
                                     <p data-animation="fadeInLeft" data-delay=".7s" data-duration="2000ms">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat is aute irure.</p>
                                     <!-- Hero-btn -->
                                     <div class="hero__btn" data-animation="fadeInLeft" data-delay=".8s" data-duration="2000ms">
-                                        <a href="industries.html" class="btn hero-btn">Shop Now</a>
+                                        <a href="{{ route('shop.index')}}" class="btn hero-btn">Shop Now</a>
                                     </div>
                                 </div>
                             </div>
@@ -382,7 +382,7 @@
     <!-- JS here -->
 
     <script src="{{asset('frontend/js/vendor/modernizr-3.5.0.min.js')}}"></script>
-    <!-- Jquery, Popper, Bootstrap -->
+    <!-- Jquery, Popper, Bootstrap, Ajax -->
     <script src="{{asset('frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
     <script src="{{asset('frontend/js/popper.min.js')}}"></script>
     <script src="{{asset('frontend/js/bootstrap.min.js')}}"></script>
