@@ -47,7 +47,8 @@
 														<div class="popular-img">
 																<img src="{{ asset('/storage/'.$item->image)}}" alt="">
 																<div class="img-cap">
-																		<span>Add to cart</span>
+																	<span><a href="{{ route('cart-add',$item->id	)}}" id="btn-add-cart" class="btn-add-cart" onclick="addToCart()">Add to cart</a></span>
+																	<input type="hidden" name="pro_id" id="pro_id" value="{{$item->id}}">
 																</div>
 																<div class="favorit-items">
 																		<span class="flaticon-heart"></span>
@@ -78,6 +79,7 @@
 <script src="{{asset('frontend/js/vendor/jquery-1.12.4.min.js')}}"></script>
 <script>
 
+	// Loadmore Products
 	$(document).on('click', '#btn-load-more', function(){
 		var created_at = $(this).data(created_at);
 		newest(created_at);
@@ -101,44 +103,6 @@
       }
     })
   }
-
-	// function priceSort(){
-  //   // var created_at = document.getElementById('created_at').value;
-  //   // alert(created_at);
-
-  //   $.ajax({
-  //     url:" {{ route('price-sort')}}",
-  //     method: 'POST',
-  //     headers:{
-  //           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  //         },
-  //     data: {
-  //       // time:created_at,
-  //     },
-  //     success:function(data){
-  //       $('#list-product').html(data);
-  //     }
-  //   })
-  // }
-
-	// function nameSort(){
-  //   // var created_at = document.getElementById('created_at').value;
-  //   // alert(created_at);
-
-  //   $.ajax({
-  //     url:" {{ route('name-sort')}}",
-  //     method: 'POST',
-  //     headers:{
-  //           'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-  //         },
-  //     data: {
-  //       // time:created_at,
-  //     },
-  //     success:function(data){
-  //       $('#list-product').html(data);
-  //     }
-  //   })
-  // }
 
 </script>
 @endsection

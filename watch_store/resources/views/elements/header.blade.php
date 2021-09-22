@@ -48,45 +48,42 @@
                                     <span class="flaticon-search"></span>
                                 </div>
                             </li>
-                            <li>
-                                <a class="total-cart" href="{{route('cart.index')}}">
-                                    {{-- <span>2</span> --}}
-                                    <span class="flaticon-shopping-cart"></span>
-                                </a> 
+                            <li style="margin-top: -7px">
+                                <a class="nav-link flaticon-shopping-cart cart" href="{{ route('cart')}}" style="color:#000;">
+                                    <p class="total-qty">{{$cart->total_quantity}}</p>
+                                </a>
                             </li>
-                            
-                                {{-- <a href="{{route('login')}}"><span class="flaticon-user"></span></a> --}}
-                                <!-- Authentication Links -->
-                                @guest
-                                {{-- Route::has : check route('login') already exists --}}
-                                @if (Route::has('login'))
-                                    <li class="nav-item">
-                                        <a href="{{route('login')}}"><span class="flaticon-user"></span></a>
-                                    </li>
-                                @endif
-                                @else
-                                    <li style="margin-top: -7px">
-                                        <a id="navbarDropdown" class="nav-link dropdown-toggle username-logout" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            {{ Auth::user()->name }}
+
+                            <!-- Authentication Links -->
+                            @guest
+                            {{-- Route::has : check route('login') already exists --}}
+                            @if (Route::has('login'))
+                                <li class="nav-item">
+                                    <a href="{{route('login')}}"><span class="flaticon-user"></span></a>
+                                </li>
+                            @endif
+                            @else
+                                <li style="margin-top: -7px">
+                                    <a id="navbarDropdown" class="nav-link dropdown-toggle username-logout" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                        {{ Auth::user()->name }}
+                                    </a>
+
+                                    <div class="dropdown-menu dropdown-menu-right logout-toggle dropdown-profile" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{{ route('profiles.index') }}">
+                                            {{ __('Profile') }}
+                                        </a>
+                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                        onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                            {{ __('Logout') }}
                                         </a>
 
-                                        <div class="dropdown-menu dropdown-menu-right logout-toggle" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="{{ route('profiles.index') }}">
-                                                {{ __('Profile') }}
-                                            </a>
-                                            <a class="dropdown-item" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                                            document.getElementById('logout-form').submit();">
-                                                {{ __('Logout') }}
-                                            </a>
-
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                                @csrf
-                                            </form>
-                                        </div>
-                                    </li>
-                                @endguest
-                            
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </div>
+                                </li>
+                            @endguest
                         </ul>
                     </div>
                 </div>

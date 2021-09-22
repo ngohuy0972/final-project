@@ -13,13 +13,29 @@
     background-color: transparent;
     border: 1px solid #ff2020;
     font-size: 15px;
-    font-weight: 700;
     color: #ff2020;
     text-transform: uppercase;
     font-weight: 400;
 }
 
 .all-button:hover {
+    background:#ff2020;
+    color: #fff;
+}
+
+.button-update-cart {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid #ff2020;
+    font-size: 15px;
+    font-weight: 400;
+    color: #ff2020;
+    text-transform: uppercase;
+}
+
+.button-update-cart:hover {
     background:#ff2020;
     color: #fff;
 }
@@ -110,6 +126,37 @@ label {
 .active {
     font-weight: 900;
     color: #ff2020 !important;
+}
+
+.btn-add-cart {
+    color: #fff;
+}
+
+.input-number {
+    padding: 10px 15px;
+    width: 70px;
+}
+
+.dropdown-cart {
+    width: auto;
+}
+
+.cart {
+    position: relative;
+}
+
+.total-qty {
+    position: absolute;
+    margin-top: -31px;
+    margin-left: 10px;
+    background: #ff2020;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    text-align: center;
+    line-height: 15px;
+    color: #fff;
+    font-size: 10px;
 }
 
 
@@ -1422,7 +1469,7 @@ label {
     .slider-height{min-height:400px}}@media (max-width: 575px){
     .slider-height{min-height:430px}}
 .slider-height2{background-image:url(../img/hero/about_hero.png);
-    min-height:500px;
+    min-height:250px;
     background-repeat:no-repeat;
     background-position:center center}@media (max-width: 575px){
     .slider-height2{min-height:260px}}
@@ -4395,8 +4442,8 @@ label {
     .btn_1{display:inline-block;
         padding:17px 50px;
         border-radius:5px;
-        background-color:#2577fd;
-        border:2px solid #2577fd;
+        background-color:#ff2020;
+        border:2px solid #ff2020;
         font-size:15px;
         font-weight:500;
         -webkit-transition:0

@@ -19,7 +19,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name'=>'Watch 01',
             'brand'=>'Rolex',
-            'price'=>'30000',
+            'price'=>'35000',
             'image'=>'/uploads/images/popular1.png',
             'category'=>'Watch'
         ]);
@@ -59,7 +59,7 @@ class ProductSeeder extends Seeder
         Product::create([
             'name'=>'Watch 06',
             'brand'=>'Hublot',
-            'price'=>'30000',
+            'price'=>'45000',
             'image'=>'/uploads/images/popular6.png',
             'category'=>'Watch'
         ]);

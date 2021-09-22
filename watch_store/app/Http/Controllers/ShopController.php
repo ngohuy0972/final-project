@@ -83,7 +83,7 @@ class ShopController extends Controller
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
                                                 <div class="img-cap">
-                                                        <span>Add to cart</span>
+                                                        <span><a href="'.route('cart-add',$item->id).'" class="btn-add-cart">Add to cart</a></span>
                                                 </div>
                                                 <div class="favorit-items">
                                                         <span class="flaticon-heart"></span>
@@ -145,7 +145,7 @@ class ShopController extends Controller
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
                                                 <div class="img-cap">
-                                                        <span>Add to cart</span>
+                                                        <span><a href="'.route('cart-add',$item->id).'" class="btn-add-cart">Add to cart</a></span>
                                                 </div>
                                                 <div class="favorit-items">
                                                         <span class="flaticon-heart"></span>
@@ -207,14 +207,14 @@ class ShopController extends Controller
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
                                                 <div class="img-cap">
-                                                        <span>Add to cart</span>
+                                                        <span><a href="'.route('cart-add',$item->id).'" class="btn-add-cart">Add to cart</a></span>
                                                 </div>
                                                 <div class="favorit-items">
                                                         <span class="flaticon-heart"></span>
                                                 </div>
                                         </div>
                                         <div class="popular-caption">
-                                                <h3><a href="'.route('show.show',$item->id).'">'.$item->name.'</a></h3>
+                                                <h3><a href="'.route('shop.show',$item->id).'">'.$item->name.'</a></h3>
                                                 <span>$ '.number_format($item->price).'</span>
                                         </div>
                                 </div>

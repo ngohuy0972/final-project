@@ -42,17 +42,17 @@
                 Seamlessly empower fully researched growth strategies and interoperable internal or “organic” sources. Credibly innovate granular internal or “organic” sources whereas high standards in web-readiness. Credibly innovate granular internal or organic sources whereas high standards in web-readiness. Energistically scale future-proof core competencies vis-a-vis impactful experiences. Dramatically synthesize integrated schemas. with optimal networks.
               </p>
               <div class="card_area">
-                <div class="quantity">Quantity</div>
-                <div class="product_count_area">
+                <div class="quantity">Price</div>
+                {{-- <div class="product_count_area">
                     <div class="product_count d-inline-block">
                         <span class="product_count_item inumber-decrement"> <i class="ti-minus"></i></span>
                         <input class="product_count_item input-number" type="text" value="1" min="0" max="10">
                         <span class="product_count_item number-increment"> <i class="ti-plus"></i></span>
                     </div>
-                </div>
+                </div> --}}
                 <div class="total-price">100,000$</div>
                 <div class="add_to_cart">
-                    <a href="#" class="btn_3">add to cart</a>
+                    <a href="{{ route('cart-add',$item->id	)}}" class="btn_3">add to cart</a>
                 </div>
               </div>
             </div>

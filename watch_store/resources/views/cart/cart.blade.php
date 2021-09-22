@@ -24,61 +24,71 @@
           <table class="table">
             <thead>
               <tr>
+                <th scope="col">No.</th>
                 <th scope="col">Product</th>
                 <th scope="col">Price</th>
+                <th></th>
                 <th scope="col">Quantity</th>
+                <th></th>
                 <th scope="col">Total</th>
               </tr>
             </thead>
             <tbody>
+              <?php
+                  $n = 1;
+              ?>
+              @foreach ($cart->items as $item)
               <tr>
+                <td>
+                  {{$n}}
+                </td>
                 <td>
                   <div class="media">
                     <div class="d-flex">
-                      <img src="{{ asset('frontend/img/gallery/card1.png')}}" alt="" />
+                      <img src="{{ asset('/storage/'.$item['image'])}}" alt="" />
                     </div>
                     <div class="media-body">
-                      <p>Minimalistic shop for multipurpose use</p>
+                      <p>{{ $item['name']}}</p>
                     </div>
                   </div>
                 </td>
                 <td>
-                  <h5>$360.00</h5>
+                  <h5>${{$item['price']}}</h5>
                 </td>
                 <td>
                   <div class="product_count">
-                    <span class="input-number-decrement"> -</span>
-                    <input class="input-number" type="text" value="1" min="0" max="10">
-                    <span class="input-number-increment"> +</i></span>
+                    <form action="{{ route('cart-update',$item['id'])}}" method="GET">
+                      <td>
+                        <input class="input-number" name="quantity" type="text" value="{{$item['quantity']}}">
+                      </td>
+                      <td>
+                        <button type="submit" class="button-update-cart">Update Cart</button>
+                      </td>
+                    </form>
                   </div>
                 </td>
                 <td>
-                  <h5>$720.00</h5>
+                  <h5>${{$item['price'] * $item['quantity']}}</h5>
                 </td>
               </tr>
-              <tr class="bottom_button">
-                <td>
-                  <a class="btn_1" href="#">Update Cart</a>
-                </td>
-                <td></td>
-                <td></td>
-                <td>
-                  <div class="cupon_text float-right">
-                    <a class="btn_1" href="#">Close Coupon</a>
-                  </div>
-                </td>
-              </tr>
+              <?php
+                  $n++;
+              ?>
+            @endforeach 
               <tr>
+                <td></td>
+                <td></td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td>
                   <h5>Subtotal</h5>
                 </td>
                 <td>
-                  <h5>$2160.00</h5>
+                  <h5>${{$cart->total_price}}</h5>
                 </td>
               </tr>
-              <tr class="shipping_area">
+              {{-- <tr class="shipping_area">
                 <td></td>
                 <td></td>
                 <td>
@@ -122,12 +132,12 @@
                     <a class="btn_1" href="#">Update Details</a>
                   </div>
                 </td>
-              </tr>
+              </tr> --}}
             </tbody>
           </table>
           <div class="checkout_btn_inner float-right">
-            <a class="btn_1" href="#">Continue Shopping</a>
-            <a class="btn_1 checkout_btn_1" href="#">Proceed to checkout</a>
+            <a class="all-button" href="#">Continue Shopping</a>
+            <a class="all-button checkout_btn_1" href="#">Proceed to checkout</a>
           </div>
         </div>
       </div>
