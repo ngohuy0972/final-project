@@ -83,7 +83,7 @@ class ShopController extends Controller
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
                                                 <div class="img-cap">
-                                                        <span><a href="'.route('cart-add',$item->id).'" class="btn-add-cart">Add to cart</a></span>
+                                                        <span><a href="javascript:void(0)" id="btn-add-cart" class="btn-add-cart" onclick="addToCart('.$item->id.')">Add to cart</a></span>
                                                 </div>
                                                 <div class="favorit-items">
                                                         <span class="flaticon-heart"></span>
@@ -145,7 +145,7 @@ class ShopController extends Controller
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
                                                 <div class="img-cap">
-                                                        <span><a href="'.route('cart-add',$item->id).'" class="btn-add-cart">Add to cart</a></span>
+                                                        <span><a href="javascript:void(0)" id="btn-add-cart" class="btn-add-cart" onclick="addToCart('.$item->id.')">Add to cart</a></span>
                                                 </div>
                                                 <div class="favorit-items">
                                                         <span class="flaticon-heart"></span>
@@ -207,7 +207,7 @@ class ShopController extends Controller
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
                                                 <div class="img-cap">
-                                                        <span><a href="'.route('cart-add',$item->id).'" class="btn-add-cart">Add to cart</a></span>
+                                                        <span><a href="javascript:void(0)" id="btn-add-cart" class="btn-add-cart" onclick="addToCart('.$item->id.')">Add to cart</a></span>
                                                 </div>
                                                 <div class="favorit-items">
                                                         <span class="flaticon-heart"></span>

@@ -2,6 +2,9 @@
 
 @section('content')
 <main>
+	<div id='notify-add-success'>
+		Add product Successfully.
+	</div>
 	<!-- Hero Area Start-->
 	<div class="slider-area ">
 			<div class="single-slider slider-height2 d-flex align-items-center">
@@ -47,7 +50,7 @@
 														<div class="popular-img">
 																<img src="{{ asset('/storage/'.$item->image)}}" alt="">
 																<div class="img-cap">
-																		<span><a href="{{ route('cart-add',$item->id	)}}" class="btn-add-cart">Add to cart</a></span>
+																		<span><a href="javascript:void(0)" id="btn-add-cart" class="btn-add-cart" onclick="addToCart({{$item->id}})">Add to cart</a></span>
 																</div>
 																<div class="favorit-items">
 																		<span class="flaticon-heart"></span>
@@ -101,5 +104,37 @@
       }
     })
   }
+
+	function addToCart(id){
+		// alert(id);
+
+		$.ajax({
+      url:"add/"+id,
+      method: 'GET',
+      headers:{
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+      data: {},
+      success:function(data){
+				// alert('Thêm sản phâm thành công')
+				
+      }
+    })
+	}
+
+	$(document).on('click', '#btn-add-cart', function(){
+		setTimeout(openNotify,500);
+		setTimeout(closeNotify,2000);
+	})
+
+	function openNotify(){
+		$('#notify-add-success').fadeIn();
+		document.getElementById('notify-add-success').style.display = "block";
+	}
+
+	function closeNotify(){
+		document.getElementById('notify-add-success').style.display = "none";
+
+	}
 </script>
 @endsection

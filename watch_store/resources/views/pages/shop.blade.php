@@ -2,6 +2,9 @@
 
 @section('content')
 <main>
+	<div id='notify-add-success'>
+		Add product Successfully.
+	</div>
 	<!-- Hero Area Start-->
 	<div class="slider-area ">
 			<div class="single-slider slider-height2 d-flex align-items-center">
@@ -47,8 +50,8 @@
 														<div class="popular-img">
 																<img src="{{ asset('/storage/'.$item->image)}}" alt="">
 																<div class="img-cap">
-																	<span><a href="{{ route('cart-add',$item->id	)}}" id="btn-add-cart" class="btn-add-cart" onclick="addToCart()">Add to cart</a></span>
-																	<input type="hidden" name="pro_id" id="pro_id" value="{{$item->id}}">
+																	<span><a href="javascript:void(0)" id="btn-add-cart" class="btn-add-cart" onclick="addToCart({{$item->id}})">Add to cart</a></span>
+																	{{-- <input type="hidden" name="pro_id" id="pro_id" value="{{$item->id}}"> --}}
 																</div>
 																<div class="favorit-items">
 																		<span class="flaticon-heart"></span>
@@ -60,6 +63,7 @@
 														</div>
 												</div>
 											</div>
+											
 										@endforeach
 										<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
 											<div class="room-btn pt-70">
@@ -103,6 +107,38 @@
       }
     })
   }
+
+	function addToCart(id){
+		// alert(id);
+
+
+		$.ajax({
+      url:"add/"+id,
+      method: 'GET',
+      headers:{
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+          },
+      data: {},
+      success:function(data){
+				// alert('Thêm sản phâm thành công')
+      }
+    })
+	}
+
+	$(document).on('click', '#btn-add-cart', function(){
+		setTimeout(openNotify,500);
+		setTimeout(closeNotify,2000);
+	})
+
+	function openNotify(){
+		$('#notify-add-success').fadeIn();
+		document.getElementById('notify-add-success').style.display = "block";
+	}
+
+	function closeNotify(){
+		document.getElementById('notify-add-success').style.display = "none";
+
+	}
 
 </script>
 @endsection
