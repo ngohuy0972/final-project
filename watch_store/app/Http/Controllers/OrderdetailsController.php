@@ -1,14 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Order;
-use App\Models\OrderDetails;
-use App\Models\Payment;
-use App\Models\Shipping;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class OrderController extends Controller
+class OrderdetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,13 +20,16 @@ class OrderController extends Controller
                         ->join('shippings', 'orders.shipping_id', '=', 'shippings.id')
                         ->join('payments', 'orders.payment_id', '=', 'payments.id')
                         ->select('orders.id', 
-                                'orders.order_total',
-                                'shippings.name',
+                                'order_details.product_price',
+                                'shippings.name', 
+                                'order_details.product_name',
+                                'order_details.product_sales_quantity',
                                 'orders.payment_id')
                         ->distinct('order_details.order_id')
                         ->get();
+        // dd($orders);                
  
-        return view('admin.order')->with(compact('orders'));
+        return view('admin.orderdetails')->with(compact('orders'));
     }
 
     /**
@@ -62,22 +62,6 @@ class OrderController extends Controller
     public function show($id)
     {
         //
-        $orders = DB::table('orders')
-                        ->join('order_details', 'orders.id', '=', 'order_details.order_id')
-                        ->join('shippings', 'orders.shipping_id', '=', 'shippings.id')
-                        ->join('payments', 'orders.payment_id', '=', 'payments.id')
-                        ->where('orders.id', '=', $id)
-                        ->select('orders.id', 
-                                'order_details.product_price',
-                                'shippings.name', 
-                                'order_details.product_name',
-                                'order_details.product_sales_quantity',
-                                'orders.payment_id')
-                        ->distinct('order_details.order_id')
-                        ->get();
-        // dd($orders);                
- 
-        return view('admin.orderdetails')->with(compact('orders'));
     }
 
     /**
@@ -112,14 +96,5 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
-        $orders = Order::where('id', '=', $id)->delete();
-        $order_details = OrderDetails::where('order_id', '=', $id)->delete();
-        $shippings = Shipping::where('id', '=', $id)->delete();
-        $payments = Payment::where('id', '=', $id)->delete();
-
-        // dd($orders);
-        // $orders->delete();
-
-        return redirect()->back();
     }
 }

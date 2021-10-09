@@ -19,6 +19,7 @@ class RoleMiddleware
     {
 
         if(!Auth::user() || Auth::user()->role->name != $role) {
+            
             return redirect()->route('home.index');
         }
         return $next($request);

@@ -12,6 +12,7 @@ class Cart extends Model
     public $items = [];
     public $total_price = 0;
     public $total_quantity = 0;
+    public $shipping_price = 20;
 
     public function __construct()
     {

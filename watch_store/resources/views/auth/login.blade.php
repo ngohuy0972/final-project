@@ -48,7 +48,7 @@
                                 @enderror
                               </div>
                               <div class="col-md-12 form-group p_star">
-                                <input id="password" type="password" placeholder="Email Address" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                                <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">

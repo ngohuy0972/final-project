@@ -29,7 +29,7 @@
                 <th scope="col">Price</th>
                 <th></th>
                 <th scope="col">Quantity</th>
-                <th></th>
+                <th>Actions</th>
                 <th scope="col">Total</th>
               </tr>
             </thead>
@@ -53,7 +53,7 @@
                   </div>
                 </td>
                 <td>
-                  <h5>${{$item['price']}}</h5>
+                  <h5>$ {{number_format($item['price'])}}</h5>
                 </td>
                 <td>
                   <div class="product_count">
@@ -62,13 +62,14 @@
                         <input class="input-number" name="quantity" type="text" value="{{$item['quantity']}}">
                       </td>
                       <td>
-                        <button type="submit" class="button-update-cart">Update Cart</button>
+                        <button type="submit" class="btn-update-cart">Update</button>
+                        <a href="{{ route('cart-remove',$item['id'])}}" class="btn-remove-cart">Remove</button>
                       </td>
                     </form>
                   </div>
                 </td>
                 <td>
-                  <h5>${{$item['price'] * $item['quantity']}}</h5>
+                  <h5>${{number_format($item['price'] * $item['quantity'])}}</h5>
                 </td>
               </tr>
               <?php
@@ -85,7 +86,7 @@
                   <h5>Subtotal</h5>
                 </td>
                 <td>
-                  <h5>${{$cart->total_price}}</h5>
+                  <h5>${{number_format($cart->total_price)}}</h5>
                 </td>
               </tr>
               {{-- <tr class="shipping_area">
@@ -136,8 +137,8 @@
             </tbody>
           </table>
           <div class="checkout_btn_inner float-right">
-            <a class="all-button" href="#">Continue Shopping</a>
-            <a class="all-button checkout_btn_1" href="#">Proceed to checkout</a>
+            <a class="all-button" href="{{ route('shop.index')}}">Continue Shopping</a>
+            <a class="all-button checkout_btn_1" href="{{ route('checkout.index')}}">Proceed to checkout</a>
           </div>
         </div>
       </div>
