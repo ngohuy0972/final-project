@@ -8,9 +8,9 @@
   
   Add product to cart.
   
-  Customer.
+ 2. Customer:
   
-2. Login :
+  Login 
 
   Add product to cart.
   
@@ -18,9 +18,10 @@
   
   View purchase history.
   
-  Admin.
+  3. Admin:
   
-3. Login to admin panel :
+  Login to admin panel.
+
   CRUD product.
   
   CRUD size.
@@ -28,8 +29,6 @@
   Manage order.
   
   View user.
-  
-  Notes.
   
 # install application using Sail and Docker-compose.
 
