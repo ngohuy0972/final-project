@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShippings extends Migration
+class CreateEmailSubscribes extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,9 @@ class CreateShippings extends Migration
      */
     public function up()
     {
-        Schema::create('shippings', function (Blueprint $table) {
+        Schema::create('email_subscribes', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('user_id');
-            $table->string('name');
-            $table->string('phone_number');
             $table->string('email');
-            $table->string('address');
-            $table->string('city');
-            $table->string('zip');
-            $table->text('order_note')->nullable();
             $table->timestamps();
         });
     }
@@ -34,6 +27,6 @@ class CreateShippings extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shippings');
+        Schema::dropIfExists('email_subscribes');
     }
 }

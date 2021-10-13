@@ -52,3 +52,6 @@ If you have problem about 'could not find driver (SQL: select * from information
 9. Create Key: php artisan key:generate
 10. Run: php artisan serve.
 >>>>>>> 440f29f685ec1c8e7ef5022591455a71ccc4ae64
+
+
+11. Configuration email sender : Turn off security two step and turn on app not safe.

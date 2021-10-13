@@ -14,6 +14,9 @@
                             <ul id="navigation">  
                                 <li><a href="{{route('home.index')}}">Home</a></li>
                                 <li><a href="{{route('shop.index')}}">Shop</a></li>
+                                @if (Auth::check() && Auth::user()->role_id == 2)
+                                    <li><a href="{{route('order-history.index')}}">Orders History</a></li>    
+                                @endif
                                 <li><a href="{{route('about.index')}}">About</a></li>
                                 {{-- <li class="hot"><a href="#">Latest</a>
                                     <ul class="submenu">
@@ -69,9 +72,11 @@
                                     </a>
 
                                     <div class="dropdown-menu dropdown-menu-right logout-toggle dropdown-profile" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('profiles.index') }}">
-                                            {{ __('Profile') }}
-                                        </a>
+                                        @if (Auth::check() && Auth::user()->role_id == 2)
+                                          <a class="dropdown-item" href="{{ route('profiles.index') }}">
+                                              {{ __('Profile') }}
+                                          </a>
+                                        @endif  
                                         <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
                                                         document.getElementById('logout-form').submit();">

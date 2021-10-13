@@ -25,6 +25,9 @@
         <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}"> 
     </head> 
     <body> 
+        <!--? Preloader Start -->
+        @include('elements.preloader')
+        <!-- Preloader Start -->
         @include('elements.header') 
         {{-- CONTENTS IS HERE --}} 
         @yield('content') 

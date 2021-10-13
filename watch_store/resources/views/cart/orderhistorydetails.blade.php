@@ -1,21 +1,36 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
-@section ('content')
-
-<div class="col-10 col-md-10 col-sm-10 col-lg-10">
-    <div class="card">
-        <div class="card-header">
-            <h5>ORDER DETAILS</h5>
-        </div>
-        <div class="card-body">
-            <table class="table table-striped">
+@section('content')
+<main>
+	<!-- Hero Area Start-->
+	<div class="slider-area ">
+			<div class="single-slider slider-height2 d-flex align-items-center">
+					<div class="container">
+							<div class="row">
+									<div class="col-xl-12">
+											<div class="hero-cap text-center">
+													<h2>Orders History Details</h2>
+											</div>
+									</div>
+							</div>
+					</div>
+			</div>
+	</div>
+	<!-- Hero Area End-->
+	<!-- Latest Products Start -->
+	<section class="popular-items latest-padding">
+			<div class="container">
+        <div class="col-12 col-md-12 col-sm-12 col-lg-12">
+          <div class="order_box">
+            <h2>Your Order Details</h2>
+            <ul class="list">
+              <table class="table" style="color: #415094;">
                 <thead>
                   <tr>
-                    <th scope="col">Product Id</th>
-                    <th scope="col">Customer Name</th>
-                    <th scope="col">Product Name</th>
-                    <th scope="col">Product Price</th>
-                    <th scope="col">Product Qty</th>
+                    <th scope="col">Id</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
                     <th scope="col">Payment Method</th>
                     <th scope="col">State</th>
                   </tr>
@@ -25,7 +40,6 @@
                     <input type="hidden" name="order_id" value="{{$order->id}}">
                     <tr>                  
                       <td>{{ $order->product_id }}</td>
-                      <td>{{ $order->name }}</td>
                       <td>{{ $order->product_name }}</td>
                       <td>$ {{ number_format($order->product_price * $order->product_sales_quantity) }}</td>
                       <td>{{ $order->product_sales_quantity }}</td>
@@ -43,8 +57,10 @@
                   @endforeach
                 </tbody>
               </table>
+          </div>
         </div>
-    </div>
-</div>
-    
+			</div>
+	</section>
+	<!-- Latest Products End -->
+</main>
 @endsection

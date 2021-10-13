@@ -1,14 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Order;
-use App\Models\OrderDetails;
-use App\Models\Payment;
-use App\Models\Shipping;
+
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class OrderController extends Controller
+class OrderHistoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,6 +16,8 @@ class OrderController extends Controller
     public function index()
     {
         //
+        $id_customer = Auth::user()->id;
+
         $orders = DB::table('orders')
                         ->join('order_details', 'orders.id', '=', 'order_details.order_id')
                         ->join('shippings', 'orders.shipping_id', '=', 'shippings.id')
@@ -26,10 +26,11 @@ class OrderController extends Controller
                                 'orders.order_total',
                                 'shippings.name',
                                 'orders.payment_id')
+                        ->where('orders.user_id', '=', $id_customer)
                         ->distinct('order_details.order_id')
                         ->get();
  
-        return view('admin.order')->with(compact('orders'));
+        return view('cart.orderhistory')->with(compact('orders'));
     }
 
     /**
@@ -78,7 +79,7 @@ class OrderController extends Controller
                         ->get();
         // dd($orders);                
  
-        return view('admin.orderdetails')->with(compact('orders'));
+        return view('cart.orderhistorydetails')->with(compact('orders'));
     }
 
     /**
@@ -113,14 +114,5 @@ class OrderController extends Controller
     public function destroy($id)
     {
         //
-        $orders = Order::where('id', '=', $id)->delete();
-        $order_details = OrderDetails::where('order_id', '=', $id)->delete();
-        $shippings = Shipping::where('id', '=', $id)->delete();
-        $payments = Payment::where('id', '=', $id)->delete();
-
-        // dd($orders);
-        // $orders->delete();
-
-        return redirect()->back();
     }
 }

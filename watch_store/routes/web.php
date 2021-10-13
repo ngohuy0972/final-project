@@ -21,19 +21,20 @@ Route::get('/', function () {
 // Authentication
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 // Guest
-Route::resource('/home', 'HomeController');
-Route::resource('/shop', 'ShopController');
+Route::resource('home', 'HomeController');
+Route::resource('shop', 'ShopController');
 Route::get('/sort-new', 'ShopController@newest')->name('sort-new');
 Route::get('/sort-price', 'ShopController@priceSort')->name('sort-price');
 Route::get('/sort-name', 'ShopController@nameSort')->name('sort-name');
 Route::post('/shop/newest', 'ShopController@newestFilter')->name('newest');
 Route::post('/shop/price-sort', 'ShopController@priceFilter')->name('price-sort');
 Route::post('/shop/name-sort', 'ShopController@nameFilter')->name('name-sort');
-Route::resource('/contact', 'ContactController');
-Route::resource('/about', 'AboutController');
+Route::resource('contact', 'ContactController');
+Route::resource('about', 'AboutController');
+Route::post('subscribe-email', 'EmailController@subscribeMail')->name('subscribe');
 
 
 // Search Engine
@@ -51,8 +52,10 @@ Route::group(['middleware' => ['auth','role:admin']], function(){
     Route::resource('admin/stock', 'StockController');
     Route::post('admin/stock-show', 'StockController@stockShow')->name('stock-show');
     Route::resource('admin/order', 'OrderController');
-    Route::resource('/profiles', 'ProfilesController');
+    Route::resource('profiles', 'ProfilesController');
     Route::resource('orders', 'OrderController');
+    Route::resource('order-history', 'OrderHistoryController');
+
 
 });
 
@@ -60,8 +63,8 @@ Route::group(['middleware' => ['auth','role:admin']], function(){
 // Role User (Customer)
 Route::group(['middleware' => ['auth','role:user']], function(){
 
-    Route::resource('/profiles', 'ProfilesController');
-
+    Route::resource('profiles', 'ProfilesController');
+    Route::resource('order-history', 'OrderHistoryController');
     // Cart
     Route::get('/cart', 'CartController@index')->name('cart');
     Route::get('add/{id}', 'CartController@addCart')->name('cart-add');
@@ -71,7 +74,7 @@ Route::group(['middleware' => ['auth','role:user']], function(){
     Route::resource('/checkout', 'CheckoutController');
     Route::get('payment-success', 'PaymentController@paymentSuccess')->name('payment-success');
     Route::get('payment-method', 'PaymentController@paymentMethod')->name('payment-method');
-
+    Route::get('email', 'CheckoutController@email');
 
 });
 

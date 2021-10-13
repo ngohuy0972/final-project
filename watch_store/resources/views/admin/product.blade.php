@@ -35,7 +35,8 @@
                 <tbody>
                 @foreach ($products as $item)
                   <tr>
-                    <th scope="row"></th>
+                    {{-- <th scope="row"></th> --}}
+                    <td>{{ $item->id}}</td>
                     <td><img style="height:100px;" src="{{ asset('/storage/'.$item->image )}}" alt=""></td>
                     <td>{{ $item->name }}</td>
                     <td>{{ $item->brand }}</td>

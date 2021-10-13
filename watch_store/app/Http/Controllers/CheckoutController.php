@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CheckoutValidationRequest;
+use App\Mail\CheckoutConfirm;
 use App\Models\Cart;
 use App\Models\Order;
 use App\Models\Payment;
@@ -11,7 +12,9 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Session;
+use Mail\MailConfirm;
 
 class CheckoutController extends Controller
 {
@@ -72,7 +75,7 @@ class CheckoutController extends Controller
         // Insert order
         $order->user_id = $user_id;
         $order->shipping_id = $shipping_info->id;
-        $order->payment_id = $payment->id;
+        $order->payment_id = $payment->payment_method;
         $order->order_total = $cart->total_price;
         $order->order_status = 'ORDERED';
         $order->save();
@@ -92,6 +95,11 @@ class CheckoutController extends Controller
             // echo($item['name'] .'-'. $item['price']);
             // echo($cart->total_quantity);            
         }
+        // Send Email confirm
+        $shopping_list = session('cart');
+        // dd($shopping_list);
+        Mail::to($request->shipping_email)->send(new CheckoutConfirm($shopping_list));
+
         // Remove all products in cart after payment success
         Session::forget('cart');
 
@@ -101,6 +109,11 @@ class CheckoutController extends Controller
             return redirect()->route('payment-method');
         }
     
+    }
+
+    public function email(){
+
+        return view('emails.checkoutconfirm');
     }
 
     /**

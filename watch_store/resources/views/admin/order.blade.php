@@ -24,11 +24,12 @@
                     <td>{{ $order->id }}</td>
                     <td>{{ $order->name }}</td>
                     <td>{{ number_format($order->order_total) }} USD</td>
-                    @if ($order->payment_id == 1)
+                    @if ($order->payment_id == '1')
                         <td style="color:red">NO PAID</td>               
-                      @else
+                    @else
                         <td style="color:green">PAID</td>
-                      @endif
+                    @endif
+                    {{-- <td>{{ $order->payment_id}}</td> --}}
                     <td>
                         <button class="btn-action btn-primary w-100 m-1"><a href="{{ route('orders.show',$order->id)}}" style="color:white;">DETAILS</a></button>
                         <form action="{{ route('orders.destroy',$order->id)}}" method="POST">
