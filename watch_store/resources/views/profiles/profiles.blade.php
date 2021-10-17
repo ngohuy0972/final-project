@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-<div class="col-12 col-md-12 col-sm-12 col-lg-10">
+<div class="col-12 col-md-12 col-sm-12 col-lg-10 profile-section">
   @foreach ($users_profile as $user)
     <form method="POST" action="{{ route('profiles.update', $user->id)}}" enctype="multipart/form-data">
         @csrf
@@ -107,6 +107,7 @@
                 </div>
             </div>
         </div>
+        <div class="gap"></div>
          
     </form>
     @endforeach

@@ -45,7 +45,7 @@
 							<div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
 									<div class="row" id="list-product">
 										@foreach ($products as $item)
-											<div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+											<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
 												<div class="single-popular-items mb-50 text-center">
 														<div class="popular-img">
 																<img src="{{ asset('/storage/'.$item->image)}}" alt="">
@@ -64,7 +64,7 @@
 											</div>
 										@endforeach
 										<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
-											<div class="room-btn pt-70">
+											<div class="room-btn pb-40">
 													<button type="submit" id="btn-load-more" class="all-button" data-created="{{ $item->created_at}}">View More Products</button>
 											</div>
 									</div>

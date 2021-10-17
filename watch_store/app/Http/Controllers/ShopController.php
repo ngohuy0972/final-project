@@ -78,7 +78,7 @@ class ShopController extends Controller
                 $last_created_at = $item->created_at;
                 # code...
                 $output .= '
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
@@ -98,14 +98,14 @@ class ShopController extends Controller
                             ';
             }
                 $output .= '<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
-                                <div class="room-btn pt-70">
+                                <div class="room-btn pb-40">
                                     <button type="submit" id="btn-load-more" class="all-button" data-created="'.$last_created_at.'">View More Products</button>
                                 </div>
                             </div>
                             ';
         } else {
             $output .= '<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
-                <div class="room-btn pt-70">
+                <div class="room-btn pb-40">
                     <button type="submit" id="btn-load-more" class="all-button">Out Of Product </button>
                 </div>
             </div>
@@ -140,7 +140,7 @@ class ShopController extends Controller
                 $last_price = $item->price;
                 # code...
                 $output .= '
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
@@ -160,14 +160,14 @@ class ShopController extends Controller
                             ';
             }
                 $output .= '<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
-                                <div class="room-btn pt-70">
+                                <div class="room-btn pb-40">
                                     <button type="submit" id="btn-load-more" class="all-button" data-price="'.$last_price.'">View More Products</button>
                                 </div>
                             </div>
                             ';
         } else {
             $output .= '<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
-                <div class="room-btn pt-70">
+                <div class="room-btn pb-40">
                     <button type="submit" id="btn-load-more" class="all-button">Out Of Product </button>
                 </div>
             </div>
@@ -202,7 +202,7 @@ class ShopController extends Controller
                 $last_name = $item->name;
                 # code...
                 $output .= '
-                            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6">
                                 <div class="single-popular-items mb-50 text-center">
                                         <div class="popular-img">
                                                 <img src="/storage/'.$item->image.'" alt="">
@@ -222,14 +222,14 @@ class ShopController extends Controller
                             ';
             }
                 $output .= '<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
-                                <div class="room-btn pt-70">
+                                <div class="room-btn pb-40">
                                     <button type="submit" id="btn-load-more" class="all-button" data-name="'.$last_name.'">View More Products</button>
                                 </div>
                             </div>
                             ';
         } else {
             $output .= '<div class="row col-xl-12 col-lg-12 col-md-12 col-sm-12" style="width: 100%;">
-                <div class="room-btn pt-70">
+                <div class="room-btn pb-40">
                     <button type="submit" id="btn-load-more" class="all-button">Out Of Product </button>
                 </div>
             </div>

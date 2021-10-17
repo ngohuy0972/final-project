@@ -52,7 +52,7 @@
 
 .all-button {
     display: inline-block;
-    padding: 18px 36px;
+    padding: 15px 20px;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid #ff2020;
@@ -62,6 +62,11 @@
     font-weight: 400;
 }
 
+.checkout_btn_1 {
+    padding: 15px 10px;
+    margin-top: 5px;
+}
+
 .all-button:hover {
     background:#ff2020;
     color: #fff;
@@ -69,7 +74,7 @@
 
 .btn-update-cart, .btn-remove-cart {
     display: inline-block;
-    padding: 10px 15px;
+    padding: 10px;
     border-radius: 5px;
     background-color: transparent;
     border: 1px solid #ff2020;
@@ -82,6 +87,9 @@
 .btn-update-cart {
     color: #28a745;
     border: 1px solid#28a745;
+    margin-bottom: 5px;
+    padding-left: 14px;
+    padding-right: 14px;
 }
 
 .btn-update-cart:hover {
@@ -224,6 +232,11 @@ label {
     display: none;
 }
 
+@media (max-width: 575px){
+    .profile-section {
+        margin-top: 60px;
+    }
+}
 
 .white-bg{background:#ffffff}
 .gray-bg{background:#f5f5f5}
@@ -800,7 +813,7 @@ label {
 .pb-35{padding-bottom:35px}
 .pb-40{padding-bottom:40px}
 .pb-45{padding-bottom:45px}
-.pb-50{padding-bottom:50px}
+.pb-50{padding-bottom:50px} 
 .pb-55{padding-bottom:55px}
 .pb-60{padding-bottom:60px}
 .pb-65{padding-bottom:65px}
@@ -1222,12 +1235,10 @@ label {
     @media only screen and (min-width: 1200px) and (max-width: 1600px){
     .latest-padding{
         padding-top:190px;
-        padding-bottom:135px
     }
 }@media only screen and (min-width: 992px) and (max-width: 1199px){
     .latest-padding{
         padding-top:190px;
-        padding-bottom:135px
     }
 }@media only screen and (min-width: 768px) and (max-width: 991px){
     .latest-padding{
@@ -1646,7 +1657,21 @@ label {
     .header-area 
     .main-header 
     .menu-wrapper 
-    .header-right{margin-right:82px}}@media only screen and (min-width: 576px) and (max-width: 767px){
+    .header-right {
+        margin-right:82px;
+    }
+
+    .header-area 
+    .main-header 
+    .menu-wrapper 
+    .header-right {
+        position:relative;
+        bottom:-10px;
+        z-index:3;
+        right:5px
+    }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px){
     .header-area 
     .main-header 
     .menu-wrapper 
@@ -1654,15 +1679,21 @@ label {
     .header-area 
     .main-header 
     .menu-wrapper 
-    .header-right{position:relative;
+    .header-right {
+        position:relative;
         bottom:-73px;
         z-index:3;
-        right:5px}}
+        right:5px
+    }
+}
 .header-area 
 .main-header 
 .menu-wrapper 
-.header-right ul{display:flex !important;
-    justify-content:space-between}
+.header-right ul{
+    display:flex !important;
+    justify-content:space-between;
+    margin-top: 10px;
+}
 .header-area 
 .main-header 
 .menu-wrapper 
@@ -6668,8 +6699,22 @@ label {
     .contact_form 
     .form-group 
     .creat_account a{color:#2577fd}
-    .order_box{background:#f7f7f7;
-        padding:30px}
+    .order_box{
+        background:#f7f7f7;
+        padding:30px
+    }
+    @media only screen and (min-width: 376px) and (max-width: 575px){
+        .order_box{
+            padding:5px;
+        }   
+    }
+
+    @media only screen and (min-width: 320px) and (max-width: 376px){
+        .order_box{
+            padding:5px;
+            font-size: 13px;
+        }   
+    }
     .order_box h2{border-bottom:1px solid #dddddd;
         font-size:18px;
         font-weight:500;
@@ -6879,10 +6924,8 @@ label {
         top:4px;
         left:4px;
         margin:auto;
-        transition:background 0
-        .25s linear;
-        -webkit-transition:background 0
-        .25s linear}
+        transition:background 0.25s linear;
+        -webkit-transition:background 0.25s linear}
     .radion_btn input[type="radio"]:checked ~ 
     .check{border:1px solid #2577fd;
         background:#2577fd}

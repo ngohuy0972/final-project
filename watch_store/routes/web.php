@@ -35,6 +35,7 @@ Route::post('/shop/name-sort', 'ShopController@nameFilter')->name('name-sort');
 Route::resource('contact', 'ContactController');
 Route::resource('about', 'AboutController');
 Route::post('subscribe-email', 'EmailController@subscribeMail')->name('subscribe');
+Route::post('contact-us-email', 'EmailController@contactMail')->name('contact-us-email');
 
 
 // Search Engine
